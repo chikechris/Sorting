@@ -2,14 +2,14 @@
 import math
 def merge( arrA, arrB ):
 
-   sorted_array = []
+   sorted_arr = []
  
    while len(arrA) and len(arrB) != 0:
        if arrA[0] <= arrB[0]:
-           sorted_array.append(arrA.pop(0))
+           sorted_arr.append(arrA.pop(0))
        else:
-          sorted_array.append(arrB.pop(0))
-   return [sorted_array, arrA, arrB]
+          sorted_arr.append(arrB.pop(0))
+   return [sorted_arr, arrA, arrB]
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
