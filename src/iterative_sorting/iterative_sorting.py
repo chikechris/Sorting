@@ -1,44 +1,56 @@
-# TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below
 
-def selection_sort( arr ):
+
+def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         current_index = i
         smallest_index = current_index
         # TO-DO: find next smallest element
-        for j in range(current_index , len(arr)):
+        for j in range(current_index, len(arr)):
             if(arr[smallest_index] > arr[j]):
                 smallest_index = j
-        (arr[current_index], arr[smallest_index]) = (arr[smallest_index], arr[current_index])
-        # (hint, can do in 3 loc) 
-             
-
-
+        (arr[current_index], arr[smallest_index]) = (
+            arr[smallest_index], arr[current_index])
+        # (hint, can do in 3 loc)
 
         # TO-DO: swap
-
-
-
 
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
+def bubble_sort(arr):
     # print(arr)
     sorted = False
     while not sorted:
         swap = False
-        for i in range(0 , len(arr)-1):
-            if(arr[i+1]< arr[i]):
+        for i in range(0, len(arr)-1):
+            if(arr[i+1] < arr[i]):
                 (arr[i], arr[i+1]) = (arr[i+1], arr[i])
                 swap = True
-        if not swap :
-            sorted =True
+        if not swap:
+            sorted = True
     return arr
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
 
-    return arr
+    def count_sort(arr, maximum=-1):
+        count = [0 for i in range(200)]
+        print(len(count))
+        for i in range(len(arr)):
+            if arr[i] < 0:
+                return "Error, negative numbers not ok in Count Sort"
+            count[arr[i]] += 1
+
+        for i in range(200):
+            if i != 0:
+                count[i] = count[i] + count[i-1]
+
+        output = [0 for i in range(len(arr))]
+        for i in range(len(arr)):
+            output[count[arr[i]]-1] = arr[i]
+            count[arr[i]] -= 1
+        return output
+    print(count_sort(arr1))
