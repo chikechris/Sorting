@@ -44,7 +44,7 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 
-    def count_sort(arr, maximum=-1):
+    def counting_sort(arr):
         count = [0 for i in range(200)]
         print(len(count))
         for i in range(len(arr)):

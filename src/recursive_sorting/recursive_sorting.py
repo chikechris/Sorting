@@ -53,15 +53,18 @@ def merge_sort(arr):
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
+    startt = mid + 1;
+    if (arr[mid] <= arr[startt]):
+        return 
+    while (start <= mid and startt <= end):
+        if (arr[start] <= arr[startt]):
+            start += 1 
+            
     # TO-DO
-
-    return arr
-
-
+    
 def merge_sort_in_place(arr, l, r):
     # TO-DO
 
-    return arr
 
 
 # STRETCH: implement the Timsort function below
